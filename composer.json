@@ -26,5 +26,6 @@
                 "SMS": "SuStartX\\SMSProviders\\Facades\\SMSFacade"
             }
         }
-    }
+    },
+    "minimum-stability": "stable"
 }
