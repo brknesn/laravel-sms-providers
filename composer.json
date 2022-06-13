@@ -1,0 +1,30 @@
+{
+    "name": "sustartx/sms-providers",
+    "description": "Laravel SMS Providers",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Şakir Mehmetoğlu",
+            "email": "sakir.mehmetoglu@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "SuStartX\\SMSProviders\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SuStartX\\SMSProviders\\Providers\\SMSServiceProvider"
+            ],
+            "aliases": {
+                "SMS": "SuStartX\\SMSProviders\\Facades\\SMSFacade"
+            }
+        }
+    }
+}
