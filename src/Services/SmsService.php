@@ -21,19 +21,16 @@ class SmsService
     }
 
     public function preparePhoneNumber($phoneNumber){
-        // TODO : Ülke kodu da numara içinde alınabilmeli
-        // TODO : Ülke kodunun olup olmama durumu farklı yöntemlerle test edilmeli
-
+        if (strpos($phoneNumber, '+') === 0) {
+            return $phoneNumber;
+        }
         if(strlen($phoneNumber) == 10 || strlen($phoneNumber) == 11){
             if(strval($phoneNumber[0]) !== '0'){
                 $phoneNumber = '0' . $phoneNumber;
             }
 
             $phoneNumber = $this->country_prefix . $phoneNumber;
-        }else{
-            throw new Exception("Telefon numarası 10 veya 11 karakter olmalı.");
         }
-
         return $phoneNumber;
     }
 
